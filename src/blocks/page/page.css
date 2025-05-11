@@ -1,0 +1,6 @@
+@import url('./hero/hero.css');
+@import url('./news/news.css');
+.page {
+  font-family: 'Inter';
+  background-color: #efefef;
+}

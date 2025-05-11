@@ -1,0 +1,51 @@
+.header {
+  box-sizing: border-box;
+  position: fixed;
+  width: 100%;
+  background-color: #efefef;;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 5%;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.header__logo {
+  position: relative;
+  text-decoration: none;
+  color: #000;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.header__logo::before {
+  position: absolute;
+  content: '';
+  width: 40px;
+  height: 40px;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: url(/src/images/logo.svg);
+  background-size: contain;
+}
+
+.header__login {
+  cursor: pointer;
+  padding: 10px 20px;
+  background: none;
+  border: 1px solid #000;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.header__reg {
+  cursor: pointer;
+  padding: 10px 20px;
+  background: none;
+  border: 1px solid #000;
+  border-radius: 20px;
+  background-color: #000;
+  color: #fff;
+  text-transform: uppercase;
+}
