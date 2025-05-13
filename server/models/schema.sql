@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS users (
   id            INTEGER PRIMARY KEY AUTOINCREMENT,
   email         TEXT    UNIQUE NOT NULL,
   password      TEXT    NOT NULL,
-  role          TEXT    NOT NULL DEFAULT 'farmer',   -- 'farmer' или 'buyer'
+  role          TEXT    NOT NULL DEFAULT 'buyer',   -- 'farmer' или 'buyer'
   inn           TEXT,                                -- ИНН
   phone         TEXT,                                -- телефон
   created_at    DATETIME DEFAULT CURRENT_TIMESTAMP

@@ -1,3 +1,6 @@
+/**
+ * Core modal functionality: open/close modals and handle ESC key.
+ */
 let currentModal = null;
 
 const handleEscClose = (evt) => {

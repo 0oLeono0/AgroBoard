@@ -2,7 +2,8 @@
   box-sizing: border-box;
   position: fixed;
   width: 100%;
-  background-color: #efefef;;
+  background-color: #fff;
+  box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -18,25 +19,28 @@
   font-weight: bold;
 }
 
-.header__logo::before {
+.header__img {
   position: absolute;
-  content: '';
-  width: 40px;
   height: 40px;
-  right: 100%;
   top: 50%;
+  left: -35px;
   transform: translateY(-50%);
-  background: url(/src/images/logo.svg);
-  background-size: contain;
+}
+
+.header__list {
+  padding: 0;
+  margin: 0;
 }
 
 .header__login {
   cursor: pointer;
   padding: 10px 20px;
   background: none;
+  color: #000;
   border: 1px solid #000;
   border-radius: 20px;
   text-transform: uppercase;
+  text-decoration: none;
 }
 
 .header__reg {
@@ -48,4 +52,32 @@
   background-color: #000;
   color: #fff;
   text-transform: uppercase;
+}
+
+.header__list {
+  display: flex;
+  list-style: none;
+  gap: 50px;
+}
+
+.header__link {
+  position: relative;
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.header__link::after {
+  position: absolute;
+  display: block;
+  content: '';
+  height: 5px;
+  width: 100%;
+  background-color: #fff;
+  top: 55px;
+  transition: background-color ease .3s;
+}
+
+.header__link.active::after {
+  background-color: #ce6b28;
 }

@@ -4,9 +4,16 @@ const jwt = require("jsonwebtoken");
 
 // Регистрация нового пользователя
 exports.register = (req, res) => {
-  const { email, password } = req.body;
-  if (!email || !password) {
-    return res.status(400).json({ error: "Email и пароль обязательны" });
+  const { email, password, phone, inn, role } = req.body;
+  
+  // Проверка обязательных полей
+  if (!email || !password || !phone || !inn || !role) {
+    return res.status(400).json({ error: "Все поля обязательны для заполнения" });
+  }
+
+  // Проверка на допустимые роли
+  if (role !== "farmer" && role !== "buyer") {
+    return res.status(400).json({ error: "Неверная роль" });
   }
 
   // Проверяем, что пользователя с таким email ещё нет
@@ -24,16 +31,23 @@ exports.register = (req, res) => {
     // Хешируем пароль и сохраняем нового пользователя
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(password, salt);
-    const sql = "INSERT INTO users (email, password) VALUES (?, ?)";
-    db.run(sql, [email, hash], function (err) {
+    
+    const sql =
+      "INSERT INTO users (email, password, phone, inn, role) VALUES (?, ?, ?, ?, ?)";
+    db.run(sql, [email, hash, phone, inn, role], function (err) {
       if (err) {
         console.error("Ошибка при создании пользователя:", err);
         return res
           .status(500)
           .json({ error: "Не удалось зарегистрировать пользователя" });
       }
+
       // this.lastID = id вновь созданного пользователя
-      res.status(201).json({ id: this.lastID, email });
+      res.status(201).json({
+        id: this.lastID,
+        email,
+        role, // Добавляем роль в ответ
+      });
     });
   });
 };
@@ -47,7 +61,7 @@ exports.login = (req, res) => {
 
   // Находим пользователя в БД
   db.get(
-    "SELECT id, email, password FROM users WHERE email = ?",
+    "SELECT id, email, password, role FROM users WHERE email = ?",
     [email],
     (err, user) => {
       if (err) {
@@ -65,7 +79,7 @@ exports.login = (req, res) => {
       }
 
       // Генерируем JWT
-      const payload = { id: user.id, email: user.email };
+      const payload = { id: user.id, email: user.email, role: user.role };
       const token = jwt.sign(payload, process.env.JWT_SECRET, {
         expiresIn: "1h",
       });

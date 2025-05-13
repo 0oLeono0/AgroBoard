@@ -1,0 +1,345 @@
+.section {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1920px;
+  position: absolute;
+  color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  padding: 100px 5%;
+  font-family: 'Inter', Arial, sans-serif;
+  align-items: center;
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  transform: translateX(-100vw);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.active-sec {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+.ads__header {
+  width: 100%;
+  text-align: left;
+  font-size: 50px;
+}
+
+.ads__text {
+  text-align: center;
+  font-size: 25px;
+}
+
+.ads__btn {
+  cursor: pointer;
+  color: #fff;
+  padding: 10px;
+  width: 10%;
+  background-color: #000000;
+  border: 1px solid #000;
+  border-radius: 30px;
+  transition: background-color ease .3s;
+}
+
+.ads__btn:hover {
+  background-color: #af5b22;
+}
+
+.ads__edit-btn,
+.ads__archive-btn,
+.ads__auction-btn {
+  cursor: pointer;
+}
+
+.ads__list {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  background-color: #ededed;
+}
+
+.ads__item {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  grid-template-columns: repeat(6, 1fr) 2fr 1fr 1fr 1fr;
+  height: 50px;
+}
+
+.catalog .ads__item {
+  grid-template-columns: repeat(6, 1fr) 2fr;
+}
+
+.ads__list-header {
+  background-color: #cacaca;
+}
+
+.ads__item:not(:last-child) {
+  border-bottom: 1px solid #808080;
+}
+
+.ads__ad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ads__ad:not(:last-child) {
+  border-right: 1px solid #808080;
+}
+
+.ads__ok-block {
+  background-color: #cacaca;
+}
+
+.ads__ok-block.active {
+  cursor: pointer;
+  background-color: #97ad69b5;
+}
+
+.ads__delete-block,
+.ads__auc-block {
+  cursor: pointer;
+}
+
+.main__container {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.auction-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  display: none;
+  /* Скрыта по умолчанию */
+}
+
+.auction-table th,
+.auction-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.auction-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.auction-table td {
+  background-color: #fff;
+}
+
+#auction-status {
+  font-size: 16px;
+  margin: 10px 0;
+  display: none;
+  /* Скрыт по умолчанию */
+}
+
+.auction-placeholder {
+  margin: 20px 0;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 18px;
+  color: #666;
+}
+
+.auction-placeholder p {
+  margin: 0;
+}
+
+.auction-protocol {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.auction-protocol h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+.auction-protocol p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.auction-details {
+  margin-bottom: 15px;
+  font-size: 16px;
+  display: none;
+  /* Скрыт по умолчанию */
+}
+
+.auction-details p {
+  margin: 5px 0;
+}
+
+.deal-card {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  max-width: 600px;
+}
+
+.deal-card h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+.deal-card p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.confirm-deal-btn {
+  padding: 10px 20px;
+  background-color: #ce6b28;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.confirm-deal-btn:hover {
+  background-color: #b35d22;
+}
+
+.start-auction-btn {
+  padding: 10px 20px;
+  background-color: #ce6b28;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'Inter', Arial, sans-serif;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+  display: none;
+  /* Скрыта по умолчанию */
+}
+
+.start-auction-btn:hover {
+  background-color: #b35d22;
+}
+
+#deal-pdf {
+  padding: 10px 20px;
+  background-color: #ce6b28;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'Inter', Arial, sans-serif;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+#deal-pdf:hover {
+  background-color: #b35d22;
+}
+
+#lot-details,
+#start-price {
+  display: none;
+  /* Скрыты по умолчанию */
+}
+
+.profile__card,
+.profile__auctions {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.profile__card h3,
+.profile__auctions h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #ce6b28;
+}
+
+.profile__card p,
+.profile__auctions p,
+.profile__auctions li {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.deliveries-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+.deliveries-table th,
+.deliveries-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.deliveries-table th.sortable {
+  cursor: pointer;
+  background-color: #f4f4f4;
+}
+
+.deliveries-table th.sortable:hover {
+  background-color: #e0e0e0;
+}
+
+.status-icon {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: white;
+}
+
+.status-yellow {
+  background-color: #f1c40f;
+}
+
+.status-green {
+  background-color: #2ecc71;
+}
+
+.deal-timeline {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.deal-timeline h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #ce6b28;
+}
+
+.deal-timeline p {
+  margin: 5px 0;
+  font-size: 16px;
+}

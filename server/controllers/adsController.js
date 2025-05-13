@@ -57,8 +57,8 @@ exports.getAdById = (req, res) => {
 // Создать новое объявление
 exports.createAd = (req, res) => {
   const { title, description = "", price = 0, region = "" } = req.body;
-  // предполагаем, что аутентификация middleware добавила req.user с полем id
   const userId = req.user && req.user.id;
+
   if (!userId) {
     return res.status(401).json({ error: "Требуется авторизация" });
   }
@@ -75,7 +75,6 @@ exports.createAd = (req, res) => {
       console.error("Error creating ad:", err);
       return res.status(500).json({ error: "Не удалось создать объявление" });
     }
-    // this.lastID содержит ID вставленной записи
     res.status(201).json({ id: this.lastID });
   });
 };
