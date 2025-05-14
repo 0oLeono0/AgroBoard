@@ -5,20 +5,36 @@
 
 .news__header {
   text-align: center;
-  font-size: 50px;
+  font-size: 90px;
+  margin-bottom: 180px;
 }
 
 .news__list {
   display: flex;
+  justify-content: space-between;
   list-style: none;
   gap: 30px;
   padding: 0;
 }
 
 .news__img {
-  max-width: 400px;
+  max-width: 330px;
+  margin-bottom: 36px;
+}
+
+.news__item {
+  max-width: 330px;
 }
 
 .news__link {
   color: #000;
+}
+
+.news__block-header {
+  font-size: 25px;
+  margin-bottom: 18px;
+}
+
+.news__description {
+  line-height: 1.6;
 }

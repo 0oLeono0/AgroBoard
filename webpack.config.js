@@ -50,6 +50,10 @@ module.exports = {
       template: "./src/profile.html",
       filename: "profile.html",
     }),
+    new HtmlWebpackPlugin({
+      template: "./src/buyer.html",
+      filename: "buyer.html",
+    }),
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
   ],

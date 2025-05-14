@@ -6,6 +6,7 @@ import "../pages/index.css";
 import { initPopupListeners } from "./popup.js"; // Corrected import from popup.js
 import { initAuth } from "./auth.js";
 import { initFarmer } from "./farmer.js";
+import { initBuyer } from "./buyer.js";
 
 // Initialize popup close listeners (common for all pages)
 initPopupListeners();
@@ -15,4 +16,6 @@ if (document.querySelector(".page")) {
   initAuth();
 } else if (document.querySelector(".farmer")) {
   initFarmer();
+} else if (document.querySelector(".buyer")) {
+  initBuyer();
 }

@@ -1,0 +1,481 @@
+.section {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1920px;
+  position: absolute;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  padding: 100px 5%;
+  align-items: center;
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  transform: translateX(-100vw);
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.buyer {
+  background-color: #97ad69;
+}
+
+.header__link-buyer.active::after {
+  background-color: #56865b;
+}
+
+.active-sec {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+.main__container {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.catalog__header,
+.auc__header,
+.deals__header,
+.profile__header {
+  width: 100%;
+  text-align: left;
+  font-size: 50px;
+}
+
+.catalog__list {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  background-color: #ededed;
+}
+
+.catalog__item {
+  display: grid;
+  justify-content: center;
+  text-align: center;
+  grid-template-columns: repeat(6, 1fr) 2fr;
+  height: 50px;
+}
+
+.catalog__list-header {
+  background-color: #cacaca;
+}
+
+.catalog__item:not(:last-child) {
+  border-bottom: 1px solid #808080;
+}
+
+.catalog__ad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.catalog__ad:not(:last-child) {
+  border-right: 1px solid #808080;
+}
+
+.profile__card {
+  margin: 20px 0;
+  padding: 15px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+}
+
+.profile__card h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+.profile__card p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.catalog__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #ededed;
+  border: 1px solid #cacaca;
+  border-radius: 5px;
+}
+
+.filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1 1 auto;
+  min-width: 200px;
+}
+
+.filter-group label {
+  font-size: 16px;
+  color: #333;
+  white-space: nowrap;
+}
+
+.filter-group select,
+.filter-group input {
+  padding: 6px;
+  font-size: 16px;
+  border: 1px solid #cacaca;
+  border-radius: 5px;
+  flex: 1;
+  min-width: 100px;
+}
+
+.range-group {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex: 1;
+}
+
+.range-group input {
+  width: 80px;
+}
+
+.range-group span {
+  font-size: 16px;
+  color: #333;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.catalog__filters button {
+  padding: 8px 15px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #56865b;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.catalog__filters button:hover {
+  background-color: #4a7150;
+}
+
+.catalog__filters-reset {
+  background-color: #808080;
+}
+
+.catalog__filters-reset:hover {
+  background-color: #666;
+}
+
+.notifications {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.notifications h3 {
+  font-size: 24px;
+  color: #56865b;
+  margin-bottom: 10px;
+}
+
+.notifications__list {
+  list-style: none;
+  padding: 0;
+  background-color: #f9f9f9;
+  border: 1px solid #cacaca;
+  border-radius: 5px;
+}
+
+.notification__item {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.notification__item:last-child {
+  border-bottom: none;
+}
+
+.notification__button {
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #56865b;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.notification__button:hover {
+  background-color: #4a7150;
+}
+
+.contracts {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.contracts h3 {
+  font-size: 24px;
+  color: #56865b;
+  margin-bottom: 10px;
+}
+
+.contracts__list {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  background-color: #f9f9f9;
+  border: 1px solid #cacaca;
+  border-radius: 5px;
+}
+
+.contracts__header,
+.contract__item {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr 1fr;
+  padding: 10px;
+  text-align: center;
+}
+
+.contracts__header {
+  background-color: #cacaca;
+  font-weight: bold;
+}
+
+.contract__item {
+  border-bottom: 1px solid #ddd;
+}
+
+.contract__item:last-child {
+  border-bottom: none;
+}
+
+.contract__field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contract__button {
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #56865b;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contract__button:hover {
+  background-color: #4a7150;
+}
+
+.contract-details {
+  margin-bottom: 20px;
+}
+
+.contract-details p {
+  font-size: 16px;
+  color: #333;
+  margin: 5px 0;
+}
+
+.contract-detail__value {
+  font-weight: 500;
+}
+
+.deals__content {
+  width: 100%;
+  position: relative;
+}
+
+.deals__placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #cacaca;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+.deals__placeholder p {
+  font-size: 18px;
+  color: #666;
+  text-align: center;
+}
+
+.deals__placeholder--hidden {
+  display: none;
+}
+
+.notifications--hidden,
+.contracts--hidden {
+  display: none;
+}
+
+
+.auc__content {
+  width: 100%;
+  position: relative;
+}
+
+.auc__placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #cacaca;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+.auc__placeholder p {
+  font-size: 18px;
+  color: #666;
+  text-align: center;
+}
+
+.auc__placeholder--hidden {
+  display: none;
+}
+
+.auc__list {
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  background-color: #ededed;
+}
+
+.auc__list-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+  padding: 10px;
+  background-color: #cacaca;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 1px solid #808080;
+}
+
+.auc__item {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr 1fr 1fr 1fr;
+  padding: 10px;
+  text-align: center;
+  border-bottom: 1px solid #808080;
+}
+
+.auc__item:last-child {
+  border-bottom: none;
+}
+
+.auc__field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auc__button {
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #56865b;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.auc__button:disabled {
+  background-color: #808080;
+  cursor: not-allowed;
+}
+
+.auc__button:hover:not(:disabled) {
+  background-color: #4a7150;
+}
+
+.bid-details p {
+  font-size: 16px;
+  color: #333;
+  margin: 5px 0;
+}
+
+.bid-detail__value {
+  font-weight: 500;
+}
+
+.bid-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.bid-form .filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bid-form button {
+  padding: 8px 15px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #56865b;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.bid-form button:hover {
+  background-color: #4a7150;
+}
+
+.upload-payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.upload-payment-form .filter-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.upload-payment-form button {
+  padding: 8px 15px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #56865b;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.upload-payment-form button:hover {
+  background-color: #4a7150;
+}
