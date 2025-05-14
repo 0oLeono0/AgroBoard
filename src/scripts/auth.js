@@ -33,20 +33,9 @@ export const initAuth = () => {
       alert("Пожалуйста, выберите роль: Покупатель или Фермер");
       return;
     }
-
-    try {
-      const response = await registerUser(data);
-      if (response.error) {
-        alert(response.error);
-      } else {
-        closeModal(regPopup);
-        // Перенаправление в зависимости от роли
-        window.location.href =
-          data.role === "buyer" ? "./buyer.html" : "./profile.html";
-      }
-    } catch (error) {
-      console.error("Registration error:", error);
-      alert("Something went wrong. Please try again later.");
-    }
+    closeModal(regPopup);
+    // Перенаправление в зависимости от роли
+    window.location.href =
+      data.role === "buyer" ? "./buyer.html" : "./profile.html";
   });
 };
